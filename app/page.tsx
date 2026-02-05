@@ -1,54 +1,50 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import { Social } from "@/typings";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Image from "next/image";
 import mariaInRed from "@/images/girlinred.jpg";
 import Link from "next/link";
 import EmbedArtist from "@/components/EmbedArtist";
-
-// type Props = {
-//   socials: Social[];
-// };
+import FooterAfterHero from "@/components/FooterAfterHero";
+import WorldInRed from "@/components/WorldInRed";
 
 
-async function Home() {
+export default function Home() {
 
   return (
-    <div className="bg-[#400000] text-[#ddd4c6] h-screen snap-y snap-mandatory overflow-scroll z-0">
+    <div
+      id="scroll-root"
+      className="bg-[#400000] text-[#ddd4c6] h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scroll-pt-[72px] z-0"
+    >
       <Header />
-
-      <section id='hero' className="snap-center">
+      <section id='hero' className="snap-start">
         <Hero />
       </section>
 
-      <section id='about' className="snap-center">
+      <section id='about' className="snap-start">
         <About />
       </section>
       
-      <section id="projects" className="snap-center">
+      <section id="projects" className="snap-start">
         <Projects />
       </section>
 
-      <section id='embedArtist' className='snap-center'>
+      {/* <section id="worldInRed" className="snap-start">
+        <WorldInRed />
+      </section> */}
+
+      <section id='embedArtist' className='snap-start'>
         <EmbedArtist />
       </section>
 
-
-      <Link href="#hero">
-      <footer className="sticky bottom-5 w-full cursor-pointer pb-[110px]">
-          <div className="flex items-center justify-center">
-            <Image
-              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-              src={mariaInRed}
-              alt="Girl in Red"
-            />
-          </div>
-        </footer>
-      </Link>
+      <FooterAfterHero
+        scrollRootId="scroll-root"
+        afterSectionId="hero"
+        headerOffsetPx={72}
+        avatarSrc={mariaInRed}
+      />
     </div>
   );
 }
 
-export default Home;
