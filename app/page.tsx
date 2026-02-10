@@ -30,13 +30,13 @@ export default function Home() {
         <Projects />
       </section>
 
-      {/* <section id="worldInRed" className="snap-start">
+      <section id="worldInRed" className="snap-start">
         <WorldInRed />
-      </section> */}
-
-      <section id='embedArtist' className='snap-start'>
-        <EmbedArtist />
       </section>
+
+      {/* <section id='embedArtist' className='snap-start'>
+        <EmbedArtist />
+      </section> */}
 
       <FooterAfterHero
         scrollRootId="scroll-root"

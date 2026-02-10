@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       screens: {
         xs: "540px",
+        md2: "885px",
         xl: '1100px'
       },
       backgroundImage: {
